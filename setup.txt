@@ -1,0 +1,25 @@
+$ cd "project folder"
+
+# this intializes npm for this project & creates a package.json file
+$ npm init
+
+# install react & all its dependencies in /node_modules
+$ npm install --save react react-dom babel-preset-react
+
+# installs webpack & all its dependencies in node_modules
+$ npm i webpack -S
+
+# create a webpack.config.js file, this tells webpack how to work
+$ touch webpack.config.js
+
+# we need babel
+$ npm i babel-loader babel-preset-es2015 babel-preset-react -S
+
+# we need a .babelrc config file for babel, add es6 and jsx plugins
+$ touch .babel.rc
+
+# no we are ready, to compile/tranform our code, use:
+$ ./node_modules/.bin/webpack -d
+
+# we can use this to do it on every change
+$ ./node_modules/.bin/webpack -d --watch
